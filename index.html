@@ -179,13 +179,52 @@
         .addEventListener("submit", function (event) {
           event.preventDefault();
 
-          console.log("Login enviado");
+          const loginForm = document.getElementById("loginForm");
 
-          // Futuramente:
-          // Supabase Auth
-          // ou Django
-          // ou sua API
+          if (loginForm) {
+            loginForm.addEventListener("submit", async (event) => {
+              event.preventDefault();
+
+              const email = document.getElementById("email").value.trim();
+
+              const password = document.getElementById("password").value;
+
+              const button = loginForm.querySelector(".login-button");
+
+              const buttonText = button.querySelector("span");
+
+              button.disabled = true;
+              buttonText.textContent = "Entrando...";
+
+              const { data, error } =
+                await supabaseClient.auth.signInWithPassword({
+                  email,
+                  password,
+                });
+
+              if (error) {
+                console.error("Erro de login:", error);
+
+                alert("Email ou senha inválidos.");
+
+                button.disabled = false;
+                buttonText.textContent = "Entrar";
+
+                return;
+              }
+
+              console.log("Usuário autenticado:", data.user);
+
+              window.location.href = "dashboard.html";
+            });
+          }
         });
     </script>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase.js"></script>
+    <script src="js/auth.js"></script>
   </body>
 </html>
