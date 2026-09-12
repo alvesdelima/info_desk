@@ -7,6 +7,7 @@
     <title>Infodesk | Dashboard</title>
 
     <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/configurações.css" />
 
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
@@ -92,10 +93,10 @@
             <span>Relatórios</span>
           </a>
 
-          <a href="#" class="menu-item">
+          <a href="#" class="menu-item" id="settingsTrigger">
             <i data-lucide="settings"></i>
 
-            <span>Configurações</span>
+            <span> Configurações </span>
           </a>
         </nav>
 
@@ -145,6 +146,101 @@
           </div>
         </div>
       </aside>
+
+      <!-- =========================================
+             MENU LATERAL DE CONFIGURAÇÕES
+        ========================================== -->
+      <aside class="settings-sidebar" id="settingsSidebar" aria-hidden="true">
+        <div class="settings-header">
+          <div>
+            <span class="settings-kicker">INFODESK</span>
+            <h2>Configurações</h2>
+          </div>
+          <button
+            class="settings-close"
+            id="settingsClose"
+            aria-label="Fechar configurações"
+          >
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <div class="settings-scroll">
+          <div class="settings-group">
+            <span class="settings-label">GERAL</span>
+
+            <button class="settings-item" data-settings-page="geral">
+              <i data-lucide="sliders-horizontal"></i>
+              <span>Geral</span>
+            </button>
+
+            <button class="settings-item" data-settings-page="telefonia">
+              <i data-lucide="phone"></i>
+              <span>Telefonia</span>
+            </button>
+
+            <button class="settings-item" data-settings-page="campos-contatos">
+              <i data-lucide="contact"></i>
+              <span>Campos dos Contatos</span>
+            </button>
+
+            <button class="settings-item" data-settings-page="horario">
+              <i data-lucide="clock-3"></i>
+              <span>Horário de Expediente</span>
+            </button>
+
+            <button class="settings-item" data-settings-page="permissoes">
+              <i data-lucide="shield-check"></i>
+              <span>Permissões</span>
+            </button>
+
+            <button class="settings-item" data-settings-page="comissoes">
+              <i data-lucide="percent"></i>
+              <span>Comissões</span>
+            </button>
+
+            <button class="settings-item" data-settings-page="acoes-massa">
+              <i data-lucide="list-checks"></i>
+              <span>Ações em Massa</span>
+            </button>
+          </div>
+
+          <div class="settings-group">
+            <span class="settings-label">CANAIS</span>
+
+            <button class="settings-item" data-settings-page="filas">
+              <i data-lucide="layers-2"></i>
+              <span>Filas</span>
+            </button>
+
+            <button class="settings-item" data-settings-page="canais">
+              <i data-lucide="smartphone"></i>
+              <span>Canais de Atendimento</span>
+            </button>
+
+            <button class="settings-item" data-settings-page="status-canais">
+              <i data-lucide="activity"></i>
+              <span>Status dos Canais</span>
+            </button>
+          </div>
+
+          <div class="settings-group">
+            <span class="settings-label">ADMINISTRAÇÃO</span>
+
+            <button class="settings-item" data-settings-page="usuarios">
+              <i data-lucide="users"></i>
+              <span>Usuários</span>
+            </button>
+
+            <button class="settings-item" data-settings-page="equipes">
+              <i data-lucide="users-round"></i>
+              <span>Equipes</span>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="settings-overlay" id="settingsOverlay"></div>
 
       <!-- =========================================
              CONTEÚDO PRINCIPAL
@@ -515,6 +611,61 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="js/supabase.js"></script>
     <script src="js/guard.js"></script>
+
+    <script>
+      (() => {
+        const trigger = document.getElementById("settingsTrigger");
+        const sidebar = document.getElementById("settingsSidebar");
+        const overlay = document.getElementById("settingsOverlay");
+        const close = document.getElementById("settingsClose");
+        const main = document.querySelector(".main");
+        const items = document.querySelectorAll(".settings-item");
+
+        if (!trigger || !sidebar || !overlay || !close) return;
+
+        const openSettings = () => {
+          sidebar.classList.add("open");
+          overlay.classList.add("visible");
+          sidebar.setAttribute("aria-hidden", "false");
+          trigger.classList.add("active");
+          document.body.classList.add("settings-open");
+        };
+
+        const closeSettings = () => {
+          sidebar.classList.remove("open");
+          overlay.classList.remove("visible");
+          sidebar.setAttribute("aria-hidden", "true");
+          trigger.classList.remove("active");
+          document.body.classList.remove("settings-open");
+        };
+
+        trigger.addEventListener("click", (event) => {
+          event.preventDefault();
+          openSettings();
+        });
+
+        close.addEventListener("click", closeSettings);
+        overlay.addEventListener("click", closeSettings);
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") closeSettings();
+        });
+
+        items.forEach((item) => {
+          item.addEventListener("click", () => {
+            items.forEach((button) => button.classList.remove("selected"));
+            item.classList.add("selected");
+
+            // Nesta etapa, apenas a navegação é criada.
+            // O conteúdo de cada configuração será implementado nas próximas etapas.
+            console.log("Configuração selecionada:", item.dataset.settingsPage);
+          });
+        });
+
+        // Garante que a área principal continue intacta nesta primeira etapa.
+        if (main) main.classList.add("settings-ready");
+      })();
+    </script>
 
     <script>
       lucide.createIcons();
