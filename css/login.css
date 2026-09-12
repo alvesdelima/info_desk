@@ -1,0 +1,761 @@
+/* ============================================
+   RESET
+============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: #06384b;
+  --dark-blue-2: #042b3b;
+
+  --cyan: #08d8d5;
+  --cyan-light: #1bbde7;
+
+  --text-dark: #14213d;
+  --text-gray: #718096;
+
+  --border: #dce3eb;
+
+  --white: #ffffff;
+}
+
+/* ============================================
+   BODY
+============================================ */
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #ffffff;
+
+  color: var(--text-dark);
+
+  min-height: 100vh;
+}
+
+/* ============================================
+   LAYOUT
+============================================ */
+
+.login-page {
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+}
+
+/* ============================================
+   PAINEL DA MARCA
+============================================ */
+
+.brand-panel {
+  width: 55%;
+
+  min-height: 100vh;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: radial-gradient(
+    circle at 50% 45%,
+    #0b526a 0%,
+    #063c50 40%,
+    #032b3b 100%
+  );
+}
+
+/* ============================================
+   EFEITO DE REDE
+============================================ */
+
+.network-background {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  opacity: 0.7;
+}
+
+/* LINHAS */
+
+.line {
+  position: absolute;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(30, 205, 238, 0.35),
+    transparent
+  );
+
+  transform-origin: left center;
+}
+
+/* linhas individuais */
+
+.line-1 {
+  width: 320px;
+
+  top: 25%;
+
+  left: 18%;
+
+  transform: rotate(24deg);
+}
+
+.line-2 {
+  width: 250px;
+
+  top: 35%;
+
+  left: 27%;
+
+  transform: rotate(-10deg);
+}
+
+.line-3 {
+  width: 350px;
+
+  top: 65%;
+
+  left: 5%;
+
+  transform: rotate(18deg);
+}
+
+.line-4 {
+  width: 280px;
+
+  top: 70%;
+
+  left: 55%;
+
+  transform: rotate(10deg);
+}
+
+.line-5 {
+  width: 220px;
+
+  top: 48%;
+
+  left: 68%;
+
+  transform: rotate(70deg);
+}
+
+.line-6 {
+  width: 260px;
+
+  top: 15%;
+
+  left: 65%;
+
+  transform: rotate(90deg);
+}
+
+/* ============================================
+   NÓS
+============================================ */
+
+.node {
+  position: absolute;
+
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #19c7ed;
+
+  box-shadow:
+    0 0 8px #19c7ed,
+    0 0 20px rgba(25, 199, 237, 0.7);
+}
+
+/* posições */
+
+.node-1 {
+  top: 17%;
+  left: 24%;
+}
+
+.node-2 {
+  top: 29%;
+  left: 47%;
+}
+
+.node-3 {
+  top: 42%;
+  left: 18%;
+}
+
+.node-4 {
+  top: 53%;
+  left: 72%;
+}
+
+.node-5 {
+  top: 69%;
+  left: 38%;
+}
+
+.node-6 {
+  top: 78%;
+  left: 65%;
+}
+
+.node-7 {
+  top: 12%;
+  left: 67%;
+}
+
+.node-8 {
+  top: 87%;
+  left: 18%;
+}
+
+.node-9 {
+  top: 38%;
+  left: 87%;
+}
+
+.node-10 {
+  top: 60%;
+  left: 9%;
+}
+
+/* ============================================
+   LOGO
+============================================ */
+
+.brand-content {
+  position: relative;
+
+  z-index: 5;
+
+  text-align: center;
+}
+
+.logo {
+  font-size: clamp(55px, 6vw, 95px);
+
+  font-weight: 600;
+
+  letter-spacing: -5px;
+
+  color: #ffffff;
+
+  line-height: 1;
+}
+
+.logo span {
+  color: var(--cyan);
+}
+
+.brand-subtitle {
+  margin-top: 15px;
+
+  font-size: 13px;
+
+  letter-spacing: 9px;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ============================================
+   RODAPÉ DO PAINEL
+============================================ */
+
+.brand-footer {
+  position: absolute;
+
+  left: 45px;
+
+  bottom: 42px;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-line {
+  width: 40px;
+
+  height: 2px;
+
+  background: var(--cyan);
+
+  margin-right: 5px;
+}
+
+.brand-footer b {
+  color: var(--cyan);
+}
+
+/* ============================================
+   PAINEL DO FORMULÁRIO
+============================================ */
+
+.form-panel {
+  width: 45%;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: #ffffff;
+}
+
+/* ============================================
+   CONTAINER
+============================================ */
+
+.login-container {
+  width: min(520px, 80%);
+}
+
+/* ============================================
+   CABEÇALHO
+============================================ */
+
+.login-header {
+  margin-bottom: 50px;
+}
+
+.login-header h1 {
+  font-size: 38px;
+
+  font-weight: 700;
+
+  color: #111827;
+
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  font-size: 17px;
+
+  color: var(--text-gray);
+}
+
+/* ============================================
+   FORM GROUP
+============================================ */
+
+.form-group {
+  margin-bottom: 27px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #1f2937;
+}
+
+/* ============================================
+   INPUT
+============================================ */
+
+.input-wrapper {
+  height: 58px;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  position: relative;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  background: #fbfcfe;
+
+  transition: all 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: #129bd0;
+
+  box-shadow: 0 0 0 3px rgba(18, 155, 208, 0.12);
+
+  background: #ffffff;
+}
+
+.input-wrapper > svg {
+  width: 21px;
+
+  height: 21px;
+
+  margin-left: 18px;
+
+  color: #64748b;
+
+  flex-shrink: 0;
+}
+
+.input-wrapper input {
+  flex: 1;
+
+  height: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  padding: 0 16px;
+
+  font-size: 16px;
+
+  color: #1e293b;
+}
+
+.input-wrapper input::placeholder {
+  color: #94a3b8;
+}
+
+/* ============================================
+   BOTÃO MOSTRAR SENHA
+============================================ */
+
+.password-toggle {
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 10px 18px;
+
+  color: #64748b;
+}
+
+.password-toggle:hover {
+  color: #0891b2;
+}
+
+.password-toggle svg {
+  width: 21px;
+
+  height: 21px;
+}
+
+/* ============================================
+   ESQUECI SENHA
+============================================ */
+
+.forgot-password {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: -8px;
+
+  margin-bottom: 28px;
+}
+
+.forgot-password a {
+  color: #078dc5;
+
+  font-size: 15px;
+
+  text-decoration: none;
+
+  font-weight: 500;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   BOTÃO LOGIN
+============================================ */
+
+.login-button {
+  width: 100%;
+
+  height: 56px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  color: #ffffff;
+
+  background: linear-gradient(90deg, #159bc9, #1598c4);
+
+  box-shadow: 0 4px 10px rgba(21, 155, 201, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.login-button svg {
+  width: 21px;
+}
+
+.login-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow: 0 7px 18px rgba(21, 155, 201, 0.28);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   SEGURANÇA
+============================================ */
+
+.secure-login {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 35px;
+
+  font-size: 14px;
+
+  color: #94a3b8;
+}
+
+.secure-dot {
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow: 0 0 7px rgba(34, 197, 94, 0.5);
+}
+
+/* ============================================
+   SUPORTE
+============================================ */
+
+.support {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin-top: 65px;
+}
+
+.support > span {
+  height: 1px;
+
+  flex: 1;
+
+  background: #e2e8f0;
+}
+
+.support p {
+  white-space: nowrap;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.support a {
+  color: #078fc7;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  margin-left: 5px;
+}
+
+.support a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   RESPONSIVO
+============================================ */
+
+@media (max-width: 900px) {
+  .brand-panel {
+    width: 45%;
+  }
+
+  .form-panel {
+    width: 55%;
+  }
+
+  .logo {
+    font-size: 55px;
+  }
+
+  .brand-subtitle {
+    font-size: 9px;
+
+    letter-spacing: 5px;
+  }
+}
+
+@media (max-width: 700px) {
+  .login-page {
+    display: block;
+  }
+
+  .brand-panel {
+    width: 100%;
+
+    min-height: 260px;
+
+    height: 260px;
+  }
+
+  .form-panel {
+    width: 100%;
+
+    min-height: calc(100vh - 260px);
+
+    padding: 50px 0;
+  }
+
+  .brand-footer {
+    display: none;
+  }
+
+  .logo {
+    font-size: 58px;
+  }
+
+  .brand-subtitle {
+    font-size: 9px;
+
+    letter-spacing: 5px;
+  }
+
+  .login-container {
+    width: 88%;
+  }
+
+  .login-header {
+    margin-bottom: 35px;
+  }
+
+  .login-header h1 {
+    font-size: 32px;
+  }
+
+  .support {
+    margin-top: 45px;
+  }
+}
+
+@media (max-width: 450px) {
+  .brand-panel {
+    min-height: 220px;
+
+    height: 220px;
+  }
+
+  .form-panel {
+    min-height: calc(100vh - 220px);
+  }
+
+  .logo {
+    font-size: 48px;
+
+    letter-spacing: -3px;
+  }
+
+  .brand-subtitle {
+    font-size: 7px;
+
+    letter-spacing: 3px;
+  }
+
+  .login-header h1 {
+    font-size: 29px;
+  }
+
+  .login-header p {
+    font-size: 15px;
+  }
+
+  .support p {
+    font-size: 12px;
+  }
+}

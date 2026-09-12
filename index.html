@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Infodesk | Login</title>
+
+    <link rel="stylesheet" href="css/login.css" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <main class="login-page">
+      <!-- =========================================
+             PAINEL ESQUERDO
+        ========================================== -->
+      <section class="brand-panel">
+        <!-- Fundo tecnológico -->
+        <div class="network-background">
+          <span class="node node-1"></span>
+          <span class="node node-2"></span>
+          <span class="node node-3"></span>
+          <span class="node node-4"></span>
+          <span class="node node-5"></span>
+          <span class="node node-6"></span>
+          <span class="node node-7"></span>
+          <span class="node node-8"></span>
+          <span class="node node-9"></span>
+          <span class="node node-10"></span>
+
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+          <span class="line line-4"></span>
+          <span class="line line-5"></span>
+          <span class="line line-6"></span>
+        </div>
+
+        <div class="brand-content">
+          <div class="logo">INFO<span>DESK</span></div>
+
+          <p class="brand-subtitle">ATENDIMENTO QUE GERA VENDAS</p>
+        </div>
+
+        <div class="brand-footer">
+          <div class="footer-line"></div>
+
+          <span> AUTOMAÇÃO </span>
+
+          <b>•</b>
+
+          <span> ATENDIMENTO </span>
+
+          <b>•</b>
+
+          <span> RESULTADOS </span>
+        </div>
+      </section>
+
+      <!-- =========================================
+             PAINEL DIREITO
+        ========================================== -->
+      <section class="form-panel">
+        <div class="login-container">
+          <header class="login-header">
+            <h1>Bem-vindo</h1>
+
+            <p>Faça login para continuar no Infodesk</p>
+          </header>
+
+          <form id="loginForm">
+            <!-- EMAIL -->
+            <div class="form-group">
+              <label for="email"> Email </label>
+
+              <div class="input-wrapper">
+                <i data-lucide="mail"></i>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="seuemail@exemplo.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- SENHA -->
+            <div class="form-group">
+              <label for="password"> Senha </label>
+
+              <div class="input-wrapper">
+                <i data-lucide="lock-keyhole"></i>
+
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Digite sua senha"
+                  autocomplete="current-password"
+                  required
+                />
+
+                <button
+                  type="button"
+                  class="password-toggle"
+                  id="togglePassword"
+                  aria-label="Mostrar senha"
+                >
+                  <i data-lucide="eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- RECUPERAR SENHA -->
+            <div class="forgot-password">
+              <a href="#"> Esqueci minha senha </a>
+            </div>
+
+            <!-- BOTÃO -->
+            <button type="submit" class="login-button">
+              <span>Entrar</span>
+
+              <i data-lucide="arrow-right"></i>
+            </button>
+
+            <!-- SEGURANÇA -->
+            <div class="secure-login">
+              <span class="secure-dot"></span>
+
+              <span> Conexão segura e criptografada </span>
+            </div>
+          </form>
+
+          <!-- CADASTRO / SUPORTE -->
+          <div class="support">
+            <span></span>
+
+            <p>
+              Não tem uma conta?
+              <a href="#"> Fale com nosso time </a>
+            </p>
+
+            <span></span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Inicializa os ícones
+      lucide.createIcons();
+
+      // Mostrar / esconder senha
+      const togglePassword = document.getElementById("togglePassword");
+
+      const password = document.getElementById("password");
+
+      togglePassword.addEventListener("click", () => {
+        const isPassword = password.type === "password";
+
+        password.type = isPassword ? "text" : "password";
+
+        togglePassword.innerHTML = isPassword
+          ? '<i data-lucide="eye-off"></i>'
+          : '<i data-lucide="eye"></i>';
+
+        lucide.createIcons();
+      });
+
+      // Formulário
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          console.log("Login enviado");
+
+          // Futuramente:
+          // Supabase Auth
+          // ou Django
+          // ou sua API
+        });
+    </script>
+  </body>
+</html>
