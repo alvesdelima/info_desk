@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Infodesk | Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css" />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- =========================================
+             SIDEBAR
+        ========================================== -->
+
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <div class="sidebar-logo">
+            <span class="logo-info">INFO</span
+            ><span class="logo-desk">DESK</span>
+          </div>
+
+          <button class="collapse-btn">
+            <i data-lucide="chevron-left"></i>
+          </button>
+        </div>
+
+        <!-- BUSCA -->
+
+        <div class="search-box">
+          <i data-lucide="search"></i>
+
+          <input type="text" placeholder="Buscar..." />
+
+          <span class="shortcut"> Ctrl+K </span>
+        </div>
+
+        <!-- MENU -->
+
+        <nav class="menu">
+          <a href="#" class="menu-item active">
+            <i data-lucide="house"></i>
+
+            <span>Início</span>
+          </a>
+
+          <a href="#" class="menu-item">
+            <i data-lucide="message-circle"></i>
+
+            <span>Conversas</span>
+
+            <span class="menu-badge"> 211 </span>
+          </a>
+
+          <a href="#" class="menu-item">
+            <i data-lucide="funnel"></i>
+
+            <span>CRM</span>
+          </a>
+
+          <a href="#" class="menu-item">
+            <i data-lucide="briefcase-business"></i>
+
+            <span>Recursos</span>
+          </a>
+
+          <a href="#" class="menu-item">
+            <i data-lucide="bot"></i>
+
+            <span>Agente de IA</span>
+          </a>
+
+          <a href="#" class="menu-item">
+            <i data-lucide="workflow"></i>
+
+            <span>Automações</span>
+          </a>
+
+          <a href="#" class="menu-item">
+            <i data-lucide="megaphone"></i>
+
+            <span>Marketing</span>
+          </a>
+
+          <a href="#" class="menu-item">
+            <i data-lucide="chart-no-axes-combined"></i>
+
+            <span>Relatórios</span>
+          </a>
+
+          <a href="#" class="menu-item">
+            <i data-lucide="settings"></i>
+
+            <span>Configurações</span>
+          </a>
+        </nav>
+
+        <!-- PARTE INFERIOR -->
+
+        <div class="sidebar-bottom">
+          <div class="quick-actions">
+            <button>
+              <i data-lucide="bell"></i>
+            </button>
+
+            <button>
+              <i data-lucide="circle-pause"></i>
+            </button>
+
+            <button>
+              <i data-lucide="phone-call"></i>
+            </button>
+
+            <button>
+              <i data-lucide="circle-help"></i>
+            </button>
+          </div>
+
+          <div class="company">
+            <div class="company-avatar">SC</div>
+
+            <div class="company-info">
+              <strong> Saúde Center Moc </strong>
+
+              <span> Organização </span>
+            </div>
+          </div>
+
+          <div class="user">
+            <div class="user-avatar">RT</div>
+
+            <div class="user-info">
+              <strong> Rayane Tráfego </strong>
+
+              <span> alvesdeliima@... </span>
+            </div>
+
+            <button class="user-menu">
+              <i data-lucide="more-vertical"></i>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- =========================================
+             CONTEÚDO PRINCIPAL
+        ========================================== -->
+
+      <main class="main">
+        <!-- HEADER -->
+
+        <header class="top-header">
+          <div>
+            <p class="welcome">Bem vindo, Rayane Tráfego a</p>
+
+            <h1>Saúde Center Moc</h1>
+          </div>
+
+          <div class="header-actions">
+            <button class="date-button">
+              <i data-lucide="clock-3"></i>
+
+              Dados desta semana
+            </button>
+
+            <span class="updated"> Atualizado às 19:28 </span>
+
+            <button class="refresh">
+              <i data-lucide="refresh-cw"></i>
+            </button>
+
+            <div class="wallet">
+              <span> CARTEIRA </span>
+
+              <strong> R$ 0,00 </strong>
+
+              <i data-lucide="chevron-right"></i>
+            </div>
+          </div>
+        </header>
+
+        <!-- PRIMEIROS PASSOS -->
+
+        <section class="setup-card">
+          <div>
+            <h2>Primeiros passos</h2>
+
+            <p>
+              Complete as configurações iniciais para aproveitar o máximo da
+              plataforma
+            </p>
+          </div>
+
+          <div class="progress">
+            <strong> 0/6 </strong>
+
+            <div class="progress-bar">
+              <div></div>
+            </div>
+
+            <strong> 0% </strong>
+
+            <i data-lucide="chevron-down"></i>
+          </div>
+        </section>
+
+        <!-- =========================================
+                 INDICADORES
+            ========================================== -->
+
+        <section class="metrics">
+          <div class="metric-card">
+            <div class="metric-title">
+              <div class="metric-icon">
+                <i data-lucide="smartphone"></i>
+              </div>
+
+              <span> CANAIS ONLINE </span>
+            </div>
+
+            <div class="metric-number">4 <small>/ 4</small></div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-title">
+              <div class="metric-icon">
+                <i data-lucide="message-circle"></i>
+              </div>
+
+              <span> CONVERSAS EM ABERTO </span>
+            </div>
+
+            <div class="metric-number">211</div>
+          </div>
+
+          <div class="metric-card attention">
+            <div class="metric-title">
+              <div class="metric-icon">
+                <i data-lucide="clock-3"></i>
+              </div>
+
+              <span> AGUARDANDO ATENDIMENTO </span>
+
+              <b class="attention-label"> ● Atenção </b>
+            </div>
+
+            <div class="metric-number">211</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-title">
+              <div class="metric-icon">
+                <i data-lucide="bot"></i>
+              </div>
+
+              <span> ATENDIMENTO POR IA </span>
+            </div>
+
+            <div class="metric-number">0</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-title">
+              <div class="metric-icon">
+                <i data-lucide="users"></i>
+              </div>
+
+              <span> CONTATOS NOVOS </span>
+            </div>
+
+            <div class="metric-number">185</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-title">
+              <div class="metric-icon">
+                <i data-lucide="trending-up"></i>
+              </div>
+
+              <span> VALOR GANHO </span>
+            </div>
+
+            <div class="metric-number money">R$ 0,00</div>
+
+            <small class="metric-description"> 0 negócios fechados </small>
+          </div>
+        </section>
+
+        <!-- =========================================
+                 GRID PRINCIPAL
+            ========================================== -->
+
+        <section class="dashboard-grid">
+          <!-- CANAIS -->
+
+          <div class="dashboard-card channels-card">
+            <div class="card-header">
+              <div class="card-title">
+                <div class="metric-icon">
+                  <i data-lucide="smartphone"></i>
+                </div>
+
+                <h3>Canais de atendimento</h3>
+              </div>
+
+              <a href="#"> Ver mais → </a>
+            </div>
+
+            <div class="availability">
+              <div class="availability-header">
+                <span> Disponibilidade </span>
+
+                <strong> 4/4 · 100% </strong>
+              </div>
+
+              <div class="availability-bar">
+                <div></div>
+              </div>
+            </div>
+
+            <div class="channel-list">
+              <div class="channel">
+                <div class="channel-left">
+                  <div class="whatsapp">
+                    <i data-lucide="message-circle"></i>
+                  </div>
+
+                  <span> SC - CRC AGENDAMENTO </span>
+                </div>
+
+                <strong>
+                  <span class="online-dot"></span>
+                  Conectado
+                </strong>
+              </div>
+
+              <div class="channel">
+                <div class="channel-left">
+                  <div class="whatsapp">
+                    <i data-lucide="message-circle"></i>
+                  </div>
+
+                  <span> SC - COMERCIAL </span>
+                </div>
+
+                <strong>
+                  <span class="online-dot"></span>
+                  Conectado
+                </strong>
+              </div>
+
+              <div class="channel">
+                <div class="channel-left">
+                  <div class="whatsapp">
+                    <i data-lucide="message-circle"></i>
+                  </div>
+
+                  <span> SC - RECEPÇÃO </span>
+                </div>
+
+                <strong>
+                  <span class="online-dot"></span>
+                  Conectado
+                </strong>
+              </div>
+
+              <div class="channel">
+                <div class="channel-left">
+                  <div class="whatsapp">
+                    <i data-lucide="message-circle"></i>
+                  </div>
+
+                  <span> SC - FIXO </span>
+                </div>
+
+                <strong>
+                  <span class="online-dot"></span>
+                  Conectado
+                </strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- PIPELINE -->
+
+          <div class="dashboard-card pipeline-card">
+            <div class="card-header">
+              <div class="card-title">
+                <div class="metric-icon">
+                  <i data-lucide="trending-up"></i>
+                </div>
+
+                <h3>Pipeline comercial</h3>
+              </div>
+
+              <a href="#"> Ver mais → </a>
+            </div>
+
+            <div class="empty-state">
+              <i data-lucide="move-up-right"></i>
+
+              <p>Nenhum negócio movimentado nesta semana</p>
+            </div>
+          </div>
+
+          <!-- CONVERSAS -->
+
+          <div class="dashboard-card conversations-card">
+            <div class="card-header">
+              <div class="card-title">
+                <div class="metric-icon">
+                  <i data-lucide="message-circle"></i>
+                </div>
+
+                <h3>Conversas</h3>
+              </div>
+
+              <a href="#"> Ver conversas → </a>
+            </div>
+
+            <div class="conversation-content">
+              <div class="conversation-total">
+                <strong> 211 </strong>
+
+                <span> conversas em aberto </span>
+              </div>
+
+              <div class="conversation-stat">
+                <div class="stat-header">
+                  <span> Aguardando atribuição </span>
+
+                  <strong> 211 de 211 </strong>
+                </div>
+
+                <div class="stat-bar orange">
+                  <div style="width: 100%"></div>
+                </div>
+              </div>
+
+              <div class="conversation-stat">
+                <div class="stat-header">
+                  <span> Atendimento por IA </span>
+
+                  <strong> 0 de 211 </strong>
+                </div>
+
+                <div class="stat-bar blue">
+                  <div style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================================
+                 PARTE INFERIOR
+            ========================================== -->
+
+        <section class="bottom-grid">
+          <!-- ATIVIDADES -->
+
+          <div class="dashboard-card">
+            <div class="card-header">
+              <div class="card-title">
+                <div class="metric-icon">
+                  <i data-lucide="square-check-big"></i>
+                </div>
+
+                <h3>Atividades</h3>
+              </div>
+
+              <a href="#"> Ver todas atividades → </a>
+            </div>
+
+            <div class="empty-small">
+              <i data-lucide="clipboard-list"></i>
+
+              <p>Nenhuma atividade recente</p>
+            </div>
+          </div>
+
+          <!-- EVENTOS -->
+
+          <div class="dashboard-card">
+            <div class="card-header">
+              <div class="card-title">
+                <div class="metric-icon">
+                  <i data-lucide="calendar-days"></i>
+                </div>
+
+                <h3>Eventos do Dia</h3>
+              </div>
+
+              <div class="event-actions">
+                <span> 0 hoje </span>
+
+                <a href="#"> Ver todos → </a>
+              </div>
+            </div>
+
+            <div class="empty-small">
+              <i data-lucide="calendar"></i>
+
+              <p>Nenhum evento para hoje</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
