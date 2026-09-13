@@ -37,9 +37,6 @@ if (loginForm) {
     console.log("Usuário:", data.user);
     console.log("Sessão:", data.session);
 
-    alert("Login realizado com sucesso!");
-
-    // Por enquanto NÃO vamos para o dashboard.
-    // Primeiro vamos confirmar que o login funciona.
+    window.location.replace("dashboard.html");
   });
 }
